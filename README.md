@@ -1,37 +1,66 @@
-# VidyaSetu - Bridge of knowledge 🤖
+# POC - Bridge of Knowledge 🤖  
+**Proof of Concept (POC) Submission**
 
-VidyaSetu is an interactive AI tutor that answers questions about your documents using a Retrieval-Augmented Generation (RAG) pipeline. It leverages Large Language Models to provide conversational, source-grounded answers from a knowledge base created from your PDF files.
+This POC is an interactive AI tutor that answers user questions using **Retrieval-Augmented Generation (RAG)**. It extracts relevant information from uploaded **PDF, Excel, and Text files** to provide **accurate, source-based answers**. The goal of this prototype is to demonstrate how conversational AI can support education and document intelligence.
 
-## ✨ Features
+---
 
-  - **Conversational Memory**: Remembers the context of the current conversation to answer follow-up questions.
-  - **Source-Grounded Answers**: Uses a RAG pipeline to base answers on the content of provided PDF documents, reducing hallucinations.
-  - **Interactive UI**: A user-friendly web interface built with Streamlit for easy interaction.
-  - **Dynamic Document Processing**: Automatically processes PDF documents from a specified folder to create a searchable FAISS vector store.
+## ✅ Objective
+
+This POC demonstrates:
+
+- AI-powered document question answering  
+- Multi-format input support (**PDF, Excel, Text**)  
+- Reliable responses using **RAG architecture**  
+- Conversational memory for contextual dialogue  
+- Local **FAISS vector database** for semantic search  
+- Simple and expandable architecture  
+
+---
+
+## ✨ Key Features
+
+| Feature | Description |
+|----------|-------------|
+| 📚 Multi-format Support | Upload and query **PDFs, Excel spreadsheets, and text files** |
+| 🔁 Conversation Memory | Stores chat history to improve follow-up questions |
+| 🔍 Document-Grounded Answers | Reduces hallucination with fact-based retrieval |
+| ⚡ Fast Search | Semantic retrieval using FAISS |
+| 🖥️ User-Friendly UI | Web app built with Streamlit |
+| 🔧 Flexible Architecture | Add more docs anytime – automatically indexed |
+
+---
+
+## 📥 Supported File Types
+
+| File Type | Extensions | Example Use Case |
+|-----------|------------|------------------|
+| PDF | `.pdf` | Books, reports, manuals |
+| Excel | `.xlsx`, `.xls` | Data sheets, tabular reports |
+| Text | `.txt` | Notes, summaries |
+
+---
 
 ## 🛠️ Tech Stack
 
-  - **Backend**: Python, LangChain, OpenAI
-  - **Vector Store**: FAISS
-  - **Document Parsing**: `unstructured`
-  - **Web UI**: Streamlit
-  - **Environment/Package Management**: `uv`
+| Component | Technology |
+|-----------|------------|
+| Language Model | OpenAI GPT |
+| Framework | LangChain |
+| Vector Store | FAISS |
+| File Processing | `unstructured`, `pandas` |
+| Frontend | Streamlit |
+| Language | Python |
+| Environment | `uv` |
 
-## ⚙️ Setup and Installation
+---
+1. Clone the Repository
 
-Follow these steps to set up and run the project locally.
-
-**1. Clone the Repository**
-
-```bash
 git clone https://github.com/YourUsername/YourRepositoryName.git
 cd YourRepositoryName
-```
 
-**2. Create and Activate Virtual Environment**
-This project uses `uv` for environment management.
+2. Create and Activate Virtual Environment This project uses uv for environment management.
 
-```bash
 # Create the virtual environment
 uv venv
 
@@ -40,55 +69,32 @@ uv venv
 source .venv/bin/activate
 # On Windows:
 .venv\Scripts\activate
-```
+3. Install Dependencies Install all the required Python packages from requirements.txt.
 
-**3. Install Dependencies**
-Install all the required Python packages from `requirements.txt`.
-
-```bash
 UV_TIMEOUT=120 uv pip install -r requirements.txt
-```
+4. Set Up Your API Key You need an OpenAI API key to run the tutor.
 
-**4. Set Up Your API Key**
-You need an OpenAI API key to run the tutor.
+Create a file named .env in the root of the project directory.
+Add your API key to this file:
+OPENAI_API_KEY="sk-..."
+5. Add Your Documents
 
-  - Create a file named `.env` in the root of the project directory.
-  - Add your API key to this file:
-    ```
-    OPENAI_API_KEY="sk-..."
-    ```
-
-**5. Add Your Documents**
-
-  - Place the PDF files you want the tutor to learn from inside the `THEMES IN WORLD HISTORY Textbook for Class XI` directory.
-  - The first time you run the application, it will automatically process these files and create a `faiss_index_from_unstructured` directory to store the knowledge base.
-
-## 🚀 How to Run
-
+Place the PDF files you want the tutor to learn from inside the THEMES IN WORLD HISTORY Textbook for Class XI directory.
+The first time you run the application, it will automatically process these files and create a faiss_index_from_unstructured directory to store the knowledge base.
+🚀 How to Run
 You can run the application as a web app or directly in the command line.
 
-**Web App (Recommended)**
-To launch the user-friendly Streamlit interface, run:
+Web App (Recommended) To launch the user-friendly Streamlit interface, run:
 
-```bash
 streamlit run app.py
-```
+Command-Line Interface To interact with the tutor directly in your terminal, run:
 
-**Command-Line Interface**
-To interact with the tutor directly in your terminal, run:
-
-```bash
 python VidyaSetu.py
-```
+☁️ Deployment
+This application is ready for deployment on Streamlit Community Cloud. To deploy:
 
-## ☁️ Deployment
-
-This application is ready for deployment on **Streamlit Community Cloud**. To deploy:
-
-1.  Push your entire project to a public GitHub repository (including the directory with your PDFs).
-2.  Make sure your `.gitignore` file includes `.env` to protect your API key.
-3.  Connect your GitHub repository to Streamlit Community Cloud and add your `OPENAI_API_KEY` in the advanced settings under "Secrets".
-
-## 📄 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+Push your entire project to a public GitHub repository (including the directory with your PDFs).
+Make sure your .gitignore file includes .env to protect your API key.
+Connect your GitHub repository to Streamlit Community Cloud and add your OPENAI_API_KEY in the advanced settings under "Secrets".
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
