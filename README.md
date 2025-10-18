@@ -69,27 +69,36 @@ uv venv
 source .venv/bin/activate
 # On Windows:
 .venv\Scripts\activate
+
 3. Install Dependencies Install all the required Python packages from requirements.txt.
 
 UV_TIMEOUT=120 uv pip install -r requirements.txt
+
 4. Set Up Your API Key You need an OpenAI API key to run the tutor.
 
 Create a file named .env in the root of the project directory.
 Add your API key to this file:
 OPENAI_API_KEY="sk-..."
+
+
 5. Add Your Documents
 
 Place the PDF files you want the tutor to learn from inside the THEMES IN WORLD HISTORY Textbook for Class XI directory.
 The first time you run the application, it will automatically process these files and create a faiss_index_from_unstructured directory to store the knowledge base.
+
+
 🚀 How to Run
 You can run the application as a web app or directly in the command line.
 
-Web App (Recommended) To launch the user-friendly Streamlit interface, run:
+Web App (Recommended) To launch the user-friendly Streamlit interface, 
 
-streamlit run app.py
-Command-Line Interface To interact with the tutor directly in your terminal, run:
+run: streamlit run app.py
 
-python VidyaSetu.py
+Command-Line Interface To interact with the tutor directly in your terminal,
+
+ run: python VidyaSetu.py
+
+ 
 ☁️ Deployment
 This application is ready for deployment on Streamlit Community Cloud. To deploy:
 
