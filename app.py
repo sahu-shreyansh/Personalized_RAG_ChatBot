@@ -1,16 +1,16 @@
 # app.py
 
 import streamlit as st
-from VidyaSetu import VidyaSetuTutor  # Imports your main class
+from ragsystem import RagSystem  # Imports your main class
 
 # --- Page Configuration ---
 st.set_page_config(
-    page_title="POC Submission",
+    page_title="Rag_system",
     page_icon="🤖"
 )
 
 # --- Page Title and Description ---
-st.title("🤖 POC Submission")
+st.title("🤖 RAG Base AI Tutor")
 st.markdown("""
 Welcome to your personal AI tutor! Ask questions about your documents and get answers directly from the source material.
 """)
@@ -22,7 +22,7 @@ Welcome to your personal AI tutor! Ask questions about your documents and get an
 # preventing it from reloading every time you interact with the UI.
 if 'tutor' not in st.session_state:
     with st.spinner("📚 Preparing the tutor... This may take a moment."):
-        st.session_state.tutor = VidyaSetuTutor()
+        st.session_state.tutor = RagSystem()
 
 # Initialize the chat message history.
 if "messages" not in st.session_state:

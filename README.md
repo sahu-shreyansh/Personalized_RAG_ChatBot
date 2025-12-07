@@ -1,109 +1,114 @@
-# POC - Bridge of Knowledge 🤖  
-**Proof of Concept (POC) Submission**
 
-This POC is an interactive AI tutor that answers user questions using **Retrieval-Augmented Generation (RAG)**. It extracts relevant information from uploaded **PDF, Excel, and Text files** to provide **accurate, source-based answers**. The goal of this prototype is to demonstrate how conversational AI can support education and document intelligence.
+# 🧠 Personalized – AI Tutor (RAG Powered)
+An interactive personalized assistance system designed to answer your queries by extracting information from uploaded learning materials. Using **Retrieval-Augmented Generation (RAG)**, the system ensures that answers are **fact-grounded, contextual, and traceable** to source files.
 
----
-
-## ✅ Objective
-
-This POC demonstrates:
-
-- AI-powered document question answering  
-- Multi-format input support (**PDF, Excel, Text**)  
-- Reliable responses using **RAG architecture**  
-- Conversational memory for contextual dialogue  
-- Local **FAISS vector database** for semantic search  
-- Simple and expandable architecture  
-
----
+## 🎯 Objective
+This Project demonstrates how AI can support educational content delivery by:
+- Understanding student questions and referencing book content directly
+- Reducing hallucinations with retrieval-based answers
+- Maintaining conversation context
+- Accepting multiple document formats
+- Offering a scalable and modular architecture
 
 ## ✨ Key Features
-
 | Feature | Description |
-|----------|-------------|
-| 📚 Multi-format Support | Upload and query **PDFs, Excel spreadsheets, and text files** |
-| 🔁 Conversation Memory | Stores chat history to improve follow-up questions |
-| 🔍 Document-Grounded Answers | Reduces hallucination with fact-based retrieval |
-| ⚡ Fast Search | Semantic retrieval using FAISS |
-| 🖥️ User-Friendly UI | Web app built with Streamlit |
-| 🔧 Flexible Architecture | Add more docs anytime – automatically indexed |
+|--------|-------------|
+| 📚 Multi-Source Document Support | Accepts PDFs, Excel sheets, and text notes |
+| 🔍 RAG-based AI Retrieval | Accurate answers based on document embeddings |
+| 🧠 Conversational Memory | Sustains follow-up context without re-asking |
+| ⚡ FAISS Vector Store | Fast semantic search for large documents |
+| 🖥️ Streamlit Interface | Clean and intuitive student-friendly UI |
+| 🔄 Auto Document Indexing | New files are processed and embedded automatically |
 
----
-
-## 📥 Supported File Types
-
-| File Type | Extensions | Example Use Case |
-|-----------|------------|------------------|
-| PDF | `.pdf` | Books, reports, manuals |
-| Excel | `.xlsx`, `.xls` | Data sheets, tabular reports |
-| Text | `.txt` | Notes, summaries |
-
----
+## 📥 Supported File Formats
+| Format | Extensions | Use Case |
+|--------|------------|----------|
+| PDF | `.pdf` | NCERT books, manuals, guides |
+| Excel | `.xlsx`, `.xls` | Tabular historical timelines, datasets |
+| Text | `.txt` | Notes, summaries, extracted content |
 
 ## 🛠️ Tech Stack
-
 | Component | Technology |
 |-----------|------------|
-| Language Model | OpenAI GPT |
+| LLM | OpenAI GPT |
+| Retrieval | FAISS (local) |
 | Framework | LangChain |
-| Vector Store | FAISS |
-| File Processing | `unstructured`, `pandas` |
+| Document Parsing | `unstructured`, `pandas` |
 | Frontend | Streamlit |
-| Language | Python |
 | Environment | `uv` |
+| Language | Python |
 
----
-1. Clone the Repository
-
+## 📦 Setup & Installation
+### 1. Clone Repository
+```bash
 git clone https://github.com/YourUsername/YourRepositoryName.git
 cd YourRepositoryName
+```
 
-2. Create and Activate Virtual Environment This project uses uv for environment management.
-
-# Create the virtual environment
+### 2. Create Virtual Environment
+```bash
 uv venv
+```
 
-# Activate the environment
-# On macOS/Linux:
-source .venv/bin/activate
-# On Windows:
+### 3. Activate Environment
+```bash
+# Windows
 .venv\Scripts\activate
 
-3. Install Dependencies Install all the required Python packages from requirements.txt.
+# Mac/Linux
+source .venv/bin/activate
+```
 
+### 4. Install Dependencies
+```bash
 UV_TIMEOUT=120 uv pip install -r requirements.txt
+```
 
-4. Set Up Your API Key You need an OpenAI API key to run the tutor.
-
-Create a file named .env in the root of the project directory.
-Add your API key to this file:
+### 5. Configure API Key
+Create `.env` in project root:
+```env
 OPENAI_API_KEY="sk-..."
+```
 
+## 📚 Add Documents
+Place textbooks and other learning files here:
+```
+THEMES IN WORLD HISTORY Textbook for Class XI/
+```
+The system will automatically create:
+```
+faiss_index_from_unstructured/
+```
+on first run to store embeddings and metadata.
 
-5. Add Your Documents
+## 🚀 Run the Application
+### Web Interface (recommended)
+```bash
+streamlit run app.py
+```
 
-Place the PDF files you want the tutor to learn from inside the THEMES IN WORLD HISTORY Textbook for Class XI directory.
-The first time you run the application, it will automatically process these files and create a faiss_index_from_unstructured directory to store the knowledge base.
+### Command Line Mode
+```bash
+python VidyaSetu.py
+```
 
+## ☁️ Deployment (Streamlit Cloud)
+1. Push repository to GitHub  
+2. **Do not include `.env`**
+3. Add ***OPENAI_API_KEY*** under **Secrets → Advanced Settings**
+4. Deploy directly from GitHub
 
-🚀 How to Run
-You can run the application as a web app or directly in the command line.
+## 📄 License
+This project is licensed under the **MIT License**.  
+See the `LICENSE` file for details.
 
-Web App (Recommended) To launch the user-friendly Streamlit interface, 
+## 🧩 Future Enhancements
+- Dashboard with learning analytics
+- Support for image-based textbooks using OCR
+- Multiple-chapter and multi-subject expansion
+- Voice-enabled Q&A system
+- Adaptive learning progress tracking
 
-run: streamlit run app.py
-
-Command-Line Interface To interact with the tutor directly in your terminal,
-
- run: python VidyaSetu.py
-
- 
-☁️ Deployment
-This application is ready for deployment on Streamlit Community Cloud. To deploy:
-
-Push your entire project to a public GitHub repository (including the directory with your PDFs).
-Make sure your .gitignore file includes .env to protect your API key.
-Connect your GitHub repository to Streamlit Community Cloud and add your OPENAI_API_KEY in the advanced settings under "Secrets".
-📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## 🙌 Contribution
+Contributions are welcome!  
+Feel free to open an issue, fork the repository, or submit a PR.
