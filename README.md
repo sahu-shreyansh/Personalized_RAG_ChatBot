@@ -30,7 +30,7 @@ This Project demonstrates how AI can support educational content delivery by:
 ## 🛠️ Tech Stack
 | Component | Technology |
 |-----------|------------|
-| LLM | OpenAI GPT |
+| LLM | OpenAI GPT | GEMINI |
 | Retrieval | FAISS (local) |
 | Framework | LangChain |
 | Document Parsing | `unstructured`, `pandas` |
@@ -67,7 +67,7 @@ UV_TIMEOUT=120 uv pip install -r requirements.txt
 ### 5. Configure API Key
 Create `.env` in project root:
 ```env
-OPENAI_API_KEY="sk-..."
+OPENAI_API_KEY/GEMINI_API_KEY="sk-..."
 ```
 
 ## 📚 Add Documents
@@ -95,7 +95,7 @@ python VidyaSetu.py
 ## ☁️ Deployment (Streamlit Cloud)
 1. Push repository to GitHub  
 2. **Do not include `.env`**
-3. Add ***OPENAI_API_KEY*** under **Secrets → Advanced Settings**
+3. Add ***OPENAI_API_KEY/GEMINI_API_KEY*** under **Secrets → Advanced Settings**
 4. Deploy directly from GitHub
 
 ## 📄 License
