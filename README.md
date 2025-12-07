@@ -73,7 +73,7 @@ OPENAI_API_KEY/GEMINI_API_KEY="sk-..."
 ## 📚 Add Documents
 Place textbooks and other learning files here:
 ```
-THEMES IN WORLD HISTORY Textbook for Class XI/
+Documents/
 ```
 The system will automatically create:
 ```
