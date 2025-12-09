@@ -89,7 +89,7 @@ streamlit run app.py
 
 ### Command Line Mode
 ```bash
-python VidyaSetu.py
+python ragsystem.py
 ```
 
 ## ☁️ Deployment (Streamlit Cloud)
