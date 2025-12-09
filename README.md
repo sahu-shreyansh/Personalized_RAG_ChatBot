@@ -30,7 +30,7 @@ This Project demonstrates how AI can support educational content delivery by:
 ## 🛠️ Tech Stack
 | Component | Technology |
 |-----------|------------|
-| LLM | OpenAI GPT | GEMINI |
+| LLM | OpenAI GPT / GEMINI |
 | Retrieval | FAISS (local) |
 | Framework | LangChain |
 | Document Parsing | `unstructured`, `pandas` |
